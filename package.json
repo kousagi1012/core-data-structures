@@ -14,7 +14,7 @@
   "scripts": {
     "linter": "linter",
     "build": "babel src -d lib",
-    "test": "mocha --compilers js:babel-register ./spec/stack.js"
+    "test": "mocha --compilers js:babel-register ./spec/*.js"
   },
   "dependencies": {
     "chai": "^1.8.1",

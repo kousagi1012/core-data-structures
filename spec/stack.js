@@ -11,12 +11,28 @@ describe('Stack', () => {
     expect(Stack).to.be.a('function')
   })
 
-  context('push()', () => {
+  context('add()', () => {
     it('pushes an element to the top of the stack.', () => {
       const myStack = new Stack()
 
-      expect(() => myStack.push('foo'))
-        .to.alter(() => myStack.length(), { from: 0, to: 1 })
+      expect(() => myStack.add('foo'))
+        .to.alter(() => myStack.size(), { from: 0, to: 1 })
+    })
+  context('remove()', () => {
+    it('removes element from the top of the stack.', () => {
+      const myStack = new Stack()
+      myStack.add('foo')
+
+      expect(() => myStack.remove())
+      .to.alter(() => myStack.size(), { from: 1, to: 0 })
+      })
+      // context('add()', () => {
+      //   it('pushes an element to the top of the stack.', () => {
+      //     const myStack = new Stack()
+      //
+      //     expect(() => myStack.add('foo'))
+      //       .to.alter(() => myStack.size(), { from: 0, to: 1 })
+      //   })
     })
   })
 })
