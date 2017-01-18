@@ -47,11 +47,16 @@ describe('Stack', () => {
     context('isEmpty()', () => {
         it('returns true if array is empty.', () => {
             const myStack = new Stack()
-            myStack.add('foo')
-            myStack.add('bar')
             expect(myStack.isEmpty()).to.equal(true)
         })
-    })
+
+        it('returns false if array is not empty.', () => {
+            const myStack = new Stack()
+            myStack.add('foo')
+            myStack.add('bar')
+            expect(myStack.isEmpty()).to.equal(false)
+          })
+        })
     context('size()', () => {
         it('returns length of array.', () => {
             const myStack = new Stack()
