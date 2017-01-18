@@ -18,7 +18,7 @@ export default class Stack {
   }
 
   isEmpty() {
-    return this.arr.length > 0
+    return this.arr.length < 1
   }
 
   size() {
