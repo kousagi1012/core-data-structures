@@ -45,12 +45,12 @@ describe('Stack', () => {
         })
     })
     context('isEmpty()', () => {
-        it('returns true if array is empty.', () => {
+        it('returns true if stack is empty.', () => {
             const myStack = new Stack()
             expect(myStack.isEmpty()).to.equal(true)
         })
 
-        it('returns false if array is not empty.', () => {
+        it('returns false if stack is not empty.', () => {
             const myStack = new Stack()
             myStack.add('foo')
             myStack.add('bar')
@@ -58,7 +58,7 @@ describe('Stack', () => {
           })
         })
     context('size()', () => {
-        it('returns length of array.', () => {
+        it('returns length of stack.', () => {
             const myStack = new Stack()
             myStack.add('foo')
             myStack.add('bar')
