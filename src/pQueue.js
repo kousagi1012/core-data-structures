@@ -14,22 +14,22 @@ export default class PQueue {
   }
 
   front() {
-
+    return this.arr[0] !== undefined ? this.arr[0] : null
   }
 
   back() {
-
+    return this.arr.length > 0 ? this.arr[this.arr.length-1] : null
   }
 
   dequeue() {
-
+    return this.arr.length > 0 ? this.arr.shift(0) : null
   }
 
   isEmpty() {
-
+    return this.arr.length < 1
   }
 
   length() {
-
+    return this.arr.length
   }
 }
