@@ -3,17 +3,10 @@
 export default class PQueue {
   constructor() {
     this.arr = []
-    this.index = 0
   }
 
   enqueue(element, priority) {
-
-    this.arr[this.index++] = {element, priority}
-    // comparePriority(a,b) => {
-    //   return a - b
-    // }
-    // return this.arr.sort(comparePriority)
-    // })
+    this.arr[this.arr.length] = {element, priority}
     var sorted = this.arr.sort((a, b) => {
       return parseFloat(b.priority) - parseFloat(a.priority)
     })
@@ -21,7 +14,7 @@ export default class PQueue {
   }
 
   front() {
-    
+
   }
 
   back() {

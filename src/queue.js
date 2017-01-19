@@ -3,11 +3,10 @@
 export default class Queue {
   constructor() {
     this.arr = []
-    this.index = 0
   }
 
   enqueue(element) {
-    return this.arr[this.index++] = element
+    return this.arr[this.arr.length] = element
   }
 
   dequeue() {
@@ -19,7 +18,7 @@ export default class Queue {
   }
 
   back() {
-    return this.arr.length > 0 ? this.arr[this.index-1] : null
+    return this.arr.length > 0 ? this.arr[this.arr.length-1] : null
   }
 
   isEmpty() {
