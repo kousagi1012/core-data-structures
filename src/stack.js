@@ -5,11 +5,11 @@ export default class Stack {
     this.arr = []
   }
 
-  add(element) {
+  push(element) {
     this.arr.push(element)
   }
 
-  remove() {
+  pop() {
     this.arr.pop()
   }
 
@@ -21,7 +21,7 @@ export default class Stack {
     return this.arr.length < 1
   }
 
-  size() {
+  length() {
     return this.arr.length
   }
 }

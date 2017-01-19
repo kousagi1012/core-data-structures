@@ -13,7 +13,7 @@ describe('Stack', () => {
         expect(Stack).to.be.a('function')
     })
 
-    context('add()', () => {
+    context('push()', () => {
         it('pushes an element to the top of the stack.', () => {
             const myStack = new Stack()
 
@@ -24,7 +24,7 @@ describe('Stack', () => {
                 })
         })
     })
-    context('remove()', () => {
+    context('pop()', () => {
         it('removes element from the top of the stack.', () => {
             const myStack = new Stack()
             myStack.add('foo')
@@ -57,7 +57,7 @@ describe('Stack', () => {
             expect(myStack.isEmpty()).to.equal(false)
           })
         })
-    context('size()', () => {
+    context('length()', () => {
         it('returns length of stack.', () => {
             const myStack = new Stack()
             myStack.add('foo')
