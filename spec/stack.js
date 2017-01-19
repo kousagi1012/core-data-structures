@@ -17,8 +17,8 @@ describe('Stack', () => {
         it('pushes an element to the top of the stack.', () => {
             const myStack = new Stack()
 
-            expect(() => myStack.add('foo'))
-                .to.alter(() => myStack.size(), {
+            expect(() => myStack.push('foo'))
+                .to.alter(() => myStack.length(), {
                     from: 0,
                     to: 1
                 })
@@ -27,10 +27,10 @@ describe('Stack', () => {
     context('pop()', () => {
         it('removes element from the top of the stack.', () => {
             const myStack = new Stack()
-            myStack.add('foo')
+            myStack.push('foo')
 
-            expect(() => myStack.remove())
-                .to.alter(() => myStack.size(), {
+            expect(() => myStack.pop())
+                .to.alter(() => myStack.length(), {
                     from: 1,
                     to: 0
                 })
@@ -39,8 +39,8 @@ describe('Stack', () => {
     context('peek()', () => {
         it('retrieves element from top of the stack.', () => {
             const myStack = new Stack()
-            myStack.add('foo')
-            myStack.add('bar')
+            myStack.push('foo')
+            myStack.push('bar')
             expect(myStack.peek()).to.equal('bar')
         })
     })
@@ -52,17 +52,17 @@ describe('Stack', () => {
 
         it('returns false if stack is not empty.', () => {
             const myStack = new Stack()
-            myStack.add('foo')
-            myStack.add('bar')
+            myStack.push('foo')
+            myStack.push('bar')
             expect(myStack.isEmpty()).to.equal(false)
           })
         })
     context('length()', () => {
         it('returns length of stack.', () => {
             const myStack = new Stack()
-            myStack.add('foo')
-            myStack.add('bar')
-            expect(myStack.size()).to.equal(2)
+            myStack.push('foo')
+            myStack.push('bar')
+            expect(myStack.length()).to.equal(2)
         })
     })
 })
