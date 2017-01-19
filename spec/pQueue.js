@@ -11,7 +11,7 @@ describe('PQueue', () => {
 
     it('exists', () => {
         expect(PQueue).to.be.a('function')
-    })
+    }) 
 
     context('enqueue()', () => {
         it('adds an element with priority(number) to the back of a queue.', () => {
