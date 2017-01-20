@@ -2,54 +2,58 @@
 
 export default class Set {
     constructor() {
-        this.arr = []
+        this.elements = []
     }
 
     add(element) {
-        this.arr.push(element)
-        return this.arr
+        this.elements.push(element)
+        return this.elements
     }
 
     isEmpty() {
-        return this.arr < 1
+        return this.elements < 1
     }
 
     contains(element) {
-        return this.arr.indexOf(element) !== -1 ? true : false
+        return this.elements.indexOf(element) !== -1
     }
 
     remove(element) {
-        var exists = this.arr.indexOf(element)
-        exists !== -1 ? this.arr.splice(exists, 1) : null
-        return this.arr
+        const exists = this.elements.indexOf(element)
+        if (exists !== -1) {
+          this.elements.splice(exists, 1)
+          return this.elements
+        }
     }
 
-    // forEvery() {
-    //   for (let i=0; i < this.arr.length; i++) {
-    //     callback(this.arr[i])
-    //   }
-    //   return callback
-    // }
+    forEvery() {
+        this.elements.forEach(function(a) {
+            console.log(a);
+        })
+    }
 
     size() {
-        return this.arr.length
+        return this.elements.length
     }
 
     union(otherSet) {
-        var joined = otherSet.concat(this.arr)
-        return joined
+        let joined = otherSet.concat(this.elements)
+        const duplicatesRemoved = joined.filter(function(element, pos) {
+            return joined.indexOf(element) == pos
+        })
+        return duplicatesRemoved
     }
 
-    intersect(arr2) {
-        var arr3 = []
-        this.arr.filter(function(element) {
-          if (arr2.indexOf(element) !== -1) {
-            arr3.push(element)
-          }
+    intersect(elements2) {
+        let combinedelementsay = []
+        this.elements.filter(function(element) {
+            if (elements2.indexOf(element) !== -1) {
+                combinedelementsay.push(element)
+            }
         })
-        var removeDuplicates = arr3.filter(function(element, pos) {
-          return arr3.indexOf(element) == pos
+        const duplicatesRemoved = combinedelementsay.filter(function(element, pos) {
+            return combinedelementsay.indexOf(element) == pos
         })
-        return removeDuplicates
+        return duplicatesRemoved
     }
 }
