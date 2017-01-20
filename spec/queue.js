@@ -15,13 +15,13 @@ describe('Queue', () => {
 
     context('enqueue()', () => {
         it('pushes an element to the back of the queue.', () => {
-          const myQueue = new Queue()
-          myQueue.enqueue('this')
-          myQueue.enqueue('is')
-          myQueue.enqueue('foo')
-          expect(myQueue.enqueue('bar')).to.equal('bar')
-                })
+            const myQueue = new Queue()
+            myQueue.enqueue('this')
+            myQueue.enqueue('is')
+            myQueue.enqueue('foo')
+            expect(myQueue.enqueue('bar')).to.equal('bar')
         })
+    })
 
     context('dequeue()', () => {
         it('returns and removes the first element of the queue.', () => {
@@ -76,7 +76,7 @@ describe('Queue', () => {
     })
 
     context('size()', () => {
-        it('returns length of array.', () => {
+        it('returns length of elementsay.', () => {
             const myQueue = new Queue()
             myQueue.enqueue('foo')
             myQueue.enqueue('bar')
@@ -84,4 +84,4 @@ describe('Queue', () => {
         })
     })
 
-  })
+})

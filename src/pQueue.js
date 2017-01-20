@@ -2,34 +2,34 @@
 
 export default class PQueue {
   constructor() {
-    this.arr = []
+    this.elements = []
   }
 
   enqueue(element, priority) {
-    this.arr[this.arr.length] = {element, priority}
-    var sorted = this.arr.sort((a, b) => {
+    this.elements[this.elements.length] = {element, priority}
+    const sorted = this.elements.sort((a, b) => {
       return parseFloat(b.priority) - parseFloat(a.priority)
     })
     return sorted
   }
 
   front() {
-    return this.arr[0] !== undefined ? this.arr[0] : null
+    return this.elements[0] !== undefined ? this.elements[0] : null
   }
 
   back() {
-    return this.arr.length > 0 ? this.arr[this.arr.length-1] : null
+    return this.elements.length > 0 ? this.elements[this.elements.length-1] : null
   }
 
   dequeue() {
-    return this.arr.length > 0 ? this.arr.shift(0) : null
+    return this.elements.length > 0 ? this.elements.shift(0) : null
   }
 
   isEmpty() {
-    return this.arr.length < 1
+    return this.elements.length < 1
   }
 
   length() {
-    return this.arr.length
+    return this.elements.length
   }
 }

@@ -70,7 +70,7 @@ describe('Set', () => {
         const mySet = new Set()
         mySet.add('bar')
         mySet.add('is')
-        // mySet.add('foo')
+        mySet.add('foo')
         expect(mySet.forEvery()).to.eql(undefined)
       })
     })
@@ -88,7 +88,22 @@ describe('Set', () => {
       it('unions the set with another set and returns the resulting set.', () => {
         const mySet = new Set()
         mySet.add('foo')
-        expect(mySet.union(['this', 'is'])).to.eql(['this', 'is', 'foo'])
+        mySet.add('bar')
+        mySet.add('bar')
+        mySet.add('foo')
+        expect(mySet.union(['this', 'is', 'this', 'is', 'bar'])).to.eql(['this', 'is', 'bar', 'foo'])
+      })
+    })
+
+    context('intersect()', () => {
+      it('intersects the set with another set and returns the resulting set.', () => {
+        const mySet = new Set()
+        mySet.add('foo')
+        mySet.add('this')
+        mySet.add('bar')
+        mySet.add('bar')
+        mySet.add('bar')
+        expect(mySet.intersect(['this', 'is', 'bar', 'bar'])).to.eql(['this', 'bar'])
       })
     })
 })
