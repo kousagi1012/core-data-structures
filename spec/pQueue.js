@@ -87,8 +87,9 @@ describe('PQueue', () => {
     context('length()', () => {
       it('returns the number of elements in the queue.', () => {
         const myPQueue = new PQueue()
-
-        expect(myPQueue.length()).to.equal(0)
+        myPQueue.enqueue('bar', 2)
+        myPQueue.enqueue('is', 30)
+        expect(myPQueue.length()).to.equal(2)
       })
     })
 })
