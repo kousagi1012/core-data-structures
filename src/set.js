@@ -1,57 +1,55 @@
 'use strict'
 
 export default class Set {
-  constructor() {
-    this.arr = []
-  }
+    constructor() {
+        this.arr = []
+    }
 
-  add(element) {
-    this.arr.push(element)
-    return this.arr
-  }
+    add(element) {
+        this.arr.push(element)
+        return this.arr
+    }
 
-  isEmpty() {
-    return this.arr < 1
-  }
+    isEmpty() {
+        return this.arr < 1
+    }
 
-  contains(element) {
-    return this.arr.indexOf(element) !== -1 ? true : false
-  }
+    contains(element) {
+        return this.arr.indexOf(element) !== -1 ? true : false
+    }
 
-  remove(element) {
-    var exists = this.arr.indexOf(element)
-    exists !== -1 ? this.arr.splice(exists, 1) : null
-    return this.arr
-  }
+    remove(element) {
+        var exists = this.arr.indexOf(element)
+        exists !== -1 ? this.arr.splice(exists, 1) : null
+        return this.arr
+    }
 
-  // forEvery() {
-  //   for (let i=0; i < this.arr.length; i++) {
-  //     callback(this.arr[i])
-  //   }
-  //   return callback
-  // }
+    // forEvery() {
+    //   for (let i=0; i < this.arr.length; i++) {
+    //     callback(this.arr[i])
+    //   }
+    //   return callback
+    // }
 
-  size() {
-    return this.arr.length
-  }
+    size() {
+        return this.arr.length
+    }
 
-  union(otherSet) {
-    var joined = otherSet.concat(this.arr)
-    return joined
-  }
+    union(otherSet) {
+        var joined = otherSet.concat(this.arr)
+        return joined
+    }
 
-  // intersect(otherSet) {
-  //   this.arr.filter(function(n) {
-  //     return otherSet.indexOf(n) != -1
-  //   }
-  // }
-
-  function intersect(this.arr, this.arr2) {
-    var empty;
-    if (this.arr2.length > this.arr.length) empty = this.arr2, this.arr2 = this.arr, this.arr = empty; // indexOf to loop over shorter
-    return this.arr.filter(function (empty) {
-        if (otherSet.indexOf(empty) !== -1) return true;
-    })
-} return (this.arr, this.arr2)
-
+    intersect(arr2) {
+        var arr3 = []
+        this.arr.filter(function(element) {
+          if (arr2.indexOf(element) !== -1) {
+            arr3.push(element)
+          }
+        })
+        var removeDuplicates = arr3.filter(function(element, pos) {
+          return arr3.indexOf(element) == pos
+        })
+        return removeDuplicates
+    }
 }

@@ -65,15 +65,15 @@ describe('Set', () => {
       })
     })
 
-    context('forEvery()', () => {
-      it('takes a callback function and passes it each element in sequence.', () => {
-        const mySet = new Set()
-        mySet.add('bar')
-        mySet.add('is')
-        // mySet.add('foo')
-        expect(mySet.forEvery()).to.eql(undefined)
-      })
-    })
+    // context('forEvery()', () => {
+    //   it('takes a callback function and passes it each element in sequence.', () => {
+    //     const mySet = new Set()
+    //     mySet.add('bar')
+    //     mySet.add('is')
+    //     // mySet.add('foo')
+    //     expect(mySet.forEvery()).to.eql(undefined)
+    //   })
+    // })
 
     context('size()', () => {
       it('returns the number of elements in the set.', () => {
@@ -89,6 +89,18 @@ describe('Set', () => {
         const mySet = new Set()
         mySet.add('foo')
         expect(mySet.union(['this', 'is'])).to.eql(['this', 'is', 'foo'])
+      })
+    })
+
+    context('intersect()', () => {
+      it('intersects the set with another set and returns the resulting set.', () => {
+        const mySet = new Set()
+        mySet.add('foo')
+        mySet.add('this')
+        mySet.add('bar')
+        mySet.add('bar')
+        mySet.add('bar')
+        expect(mySet.intersect(['this', 'is', 'bar', 'bar'])).to.eql(['this', 'bar'])
       })
     })
 })
