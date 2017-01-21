@@ -106,4 +106,23 @@ describe('Set', () => {
         expect(mySet.intersect(['this', 'is', 'bar', 'bar'])).to.eql(['this', 'bar'])
       })
     })
+
+    context('difference()', () => {
+      it('returns a set that contains the elements found in the set but not in otherSet.', () => {
+        const mySet = new Set()
+        mySet.add('foo')
+        mySet.add('foo')
+        mySet.add('this')
+        expect(mySet.difference(['foo', 'fighters', 'bar'])).to.eql(['this'])
+      })
+    })
+
+    context('clone()', () => {
+      it('returns a cloned set.', () => {
+        const mySet = new Set()
+        mySet.add('foo')
+        mySet.add('foo')
+        expect(mySet.clone()).to.eql(['foo','foo'])
+      })
+    })
 })

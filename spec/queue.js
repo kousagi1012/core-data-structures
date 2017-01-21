@@ -76,7 +76,7 @@ describe('Queue', () => {
     })
 
     context('size()', () => {
-        it('returns length of elementsay.', () => {
+        it('returns length of queue.', () => {
             const myQueue = new Queue()
             myQueue.enqueue('foo')
             myQueue.enqueue('bar')

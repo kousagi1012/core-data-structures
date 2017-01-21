@@ -44,16 +44,30 @@ export default class Set {
         return duplicatesRemoved
     }
 
-    intersect(elements2) {
-        let combinedelementsay = []
+    intersect(otherSet) {
+        let combinedArrays = []
         this.elements.filter(function(element) {
-            if (elements2.indexOf(element) !== -1) {
-                combinedelementsay.push(element)
+            if (otherSet.indexOf(element) !== -1) {
+                combinedArrays.push(element)
             }
         })
-        const duplicatesRemoved = combinedelementsay.filter(function(element, pos) {
-            return combinedelementsay.indexOf(element) == pos
+        const duplicatesRemoved = combinedArrays.filter(function(element, pos) {
+            return combinedArrays.indexOf(element) == pos
         })
         return duplicatesRemoved
+    }
+
+    difference(otherSet) {
+      let differences = []
+      this.elements.filter(function(element) {
+          if (otherSet.indexOf(element) == -1) {
+            differences.push(element)
+          }
+      })
+      return differences
+    }
+
+    clone() {
+     return this.elements.slice(0)
     }
 }
